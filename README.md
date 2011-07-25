@@ -1,4 +1,4 @@
-** Coming soon! **
+**Coming soon!**
 
 XPCKit is a Cocoa library for wrapping the XPC C APIs in a handy object-oriented model.
 
