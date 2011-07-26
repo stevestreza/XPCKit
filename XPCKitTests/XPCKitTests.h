@@ -21,4 +21,6 @@
 
 @interface XPCKitTests : SenTestCase
 
+-(void)testEqualityOfXPCRoundtripForObject:(id)object;
+
 @end

@@ -18,6 +18,7 @@
 //
 
 #import "XPCKitTests.h"
+#import "XPCKit.h"
 
 @implementation XPCKitTests
 
@@ -35,9 +36,52 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in XPCKitTests");
+-(void)testString{
+	[self testEqualityOfXPCRoundtripForObject:@""];
+	[self testEqualityOfXPCRoundtripForObject:@"Hello world!"];	
+}
+
+- (void)testNumbers{
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithInt:0]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithInt:1]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithInt:-1]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithDouble:42.1]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithLong:42]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithUnsignedLong:42]];
+	[self testEqualityOfXPCRoundtripForObject:(id)kCFBooleanTrue];
+	[self testEqualityOfXPCRoundtripForObject:(id)kCFBooleanFalse];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithBool:YES]];
+	[self testEqualityOfXPCRoundtripForObject:[NSNumber numberWithBool:NO]];
+}
+
+-(void)testArrays{
+	[self testEqualityOfXPCRoundtripForObject:[NSArray array]];
+	[self testEqualityOfXPCRoundtripForObject:[NSArray arrayWithObject:@"foo"]];
+	[self testEqualityOfXPCRoundtripForObject:[NSArray arrayWithObjects:@"foo", @"bar", @"baz", nil]];
+}
+
+-(void)testDictionaries{
+	[self testEqualityOfXPCRoundtripForObject:[NSDictionary dictionary]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDictionary dictionaryWithObject:@"bar" forKey:@"foo"]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDictionary dictionaryWithObjectsAndKeys:
+											   @"bar", @"foo",
+											   @"42", @"baz",
+											   [NSNumber numberWithInt:42], @"theAnswerToEverything",
+											   nil]];
+}
+
+-(void)testEqualityOfXPCRoundtripForObject:(id)object{
+	STAssertNotNil(object, @"Source object is nil");
+	
+	xpc_object_t xpcObject = [object newXPCObject];
+	STAssertNotNil(xpcObject, @"XPC Object is nil");
+	
+	id outObject = [NSObject objectWithXPCObject:xpcObject];
+	STAssertNotNil(outObject, @"XPC-converted object is nil");
+	
+	STAssertEqualObjects(object, outObject, @"Object %@ was not equal to result %@", outObject);
+	
+	xpc_release(xpcObject);
 }
 
 @end

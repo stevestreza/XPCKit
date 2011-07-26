@@ -57,6 +57,7 @@
 		1EEDD0E913DEA07700D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0EA13DEA08E00D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */; };
+		1EEDD0EE13DEB02000D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		1EEDD0D313DE9FAB00D5AEC3 /* XPCKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XPCKit-Info.plist"; sourceTree = "<group>"; };
 		1EEDD0D513DE9FAB00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEDD0EE13DEB02000D5AEC3 /* Foundation.framework in Frameworks */,
 				1EEDD03E13DD485400D5AEC3 /* SenTestingKit.framework in Frameworks */,
 				1EEDD04213DD485400D5AEC3 /* libXPCKit.a in Frameworks */,
 			);
@@ -203,6 +206,7 @@
 		1EEDD01D13DD485400D5AEC3 = {
 			isa = PBXGroup;
 			children = (
+				1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */,
 				1EEDD03113DD485400D5AEC3 /* XPCKit */,
 				1EEDD04313DD485400D5AEC3 /* XPCKitTests */,
 				1EEDD05C13DD48BB00D5AEC3 /* TestApp */,
@@ -753,6 +757,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
 				INFOPLIST_FILE = "XPCKitTests/XPCKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -765,6 +773,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
 				INFOPLIST_FILE = "XPCKitTests/XPCKitTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
