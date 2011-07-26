@@ -40,6 +40,7 @@
 		if([value respondsToSelector:@selector(newXPCObject)]){
 			xpc_object_t xpcValue = [value newXPCObject];
 			xpc_array_set_value(array, XPC_ARRAY_APPEND, xpcValue);
+			xpc_release(xpcValue);
 		}
 	}];
 	return array;

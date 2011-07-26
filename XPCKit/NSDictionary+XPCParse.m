@@ -42,6 +42,7 @@
         if([value respondsToSelector:@selector(newXPCObject)]){
 			xpc_object_t xpcValue = [value newXPCObject];
 			xpc_dictionary_set_value(dictionary, [key cStringUsingEncoding:NSUTF8StringEncoding], xpcValue);
+			xpc_release(xpcValue);
 //        }else{
 //            NSLog(@"Error parsing %@: Cannot handle %@ data", key, [value class]);
         }
