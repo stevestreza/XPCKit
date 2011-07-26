@@ -34,9 +34,11 @@
         object = [NSData dataWithXPCObject:xpcObject];
     }else if(type == XPC_TYPE_STRING){
         object = [NSString stringWithXPCObject:xpcObject];
+    }else if(type == XPC_TYPE_UUID){
+		object = [XPCUUID uuidWithXPCObject:xpcObject];
     }else if(type == XPC_TYPE_BOOL || type == XPC_TYPE_UINT64 || type == XPC_TYPE_INT64 || XPC_TYPE_DOUBLE){
         object = [NSNumber numberWithXPCObject:xpcObject];
-    }
+	}
     return object;
 }
 

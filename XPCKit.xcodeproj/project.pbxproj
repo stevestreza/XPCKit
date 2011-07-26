@@ -58,6 +58,10 @@
 		1EEDD0EA13DEA08E00D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */; };
 		1EEDD0EE13DEB02000D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */; };
+		1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; };
+		1EEDD0F213DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; };
+		1EEDD0F313DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
+		1EEDD0F413DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +157,8 @@
 		1EEDD0D513DE9FAB00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCUUID.h; sourceTree = "<group>"; };
+		1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPCUUID.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,8 @@
 				1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */,
 				1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */,
 				1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */,
+				1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */,
+				1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */,
 			);
 			path = XPCKit;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 				1EEDD0B213DE684300D5AEC3 /* NSArray+XPCParse.h in Headers */,
 				1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */,
 				1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */,
+				1EEDD0F213DEB97000D5AEC3 /* XPCUUID.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +378,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +574,7 @@
 				1EEDD0AD13DE669E00D5AEC3 /* NSString+XPCParse.m in Sources */,
 				1EEDD0B313DE684300D5AEC3 /* NSArray+XPCParse.m in Sources */,
 				1EEDD0C313DE7CD900D5AEC3 /* XPCListener.m in Sources */,
+				1EEDD0F413DEB97000D5AEC3 /* XPCUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +618,7 @@
 				1EEDD0E313DEA04900D5AEC3 /* NSString+XPCParse.m in Sources */,
 				1EEDD0E413DEA04900D5AEC3 /* XPCConnection.m in Sources */,
 				1EEDD0E513DEA04900D5AEC3 /* XPCListener.m in Sources */,
+				1EEDD0F313DEB97000D5AEC3 /* XPCUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

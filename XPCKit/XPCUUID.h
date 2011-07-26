@@ -1,8 +1,8 @@
 //
-//  XPCExtensions.h
+//  XPCUUID.h
 //  XPCKit
 //
-//  Created by Steve Streza on 7/25/11. Copyright 2011 XPCKit.
+//  Created by Steve Streza on 7/26/11. Copyright 2011 XPCKit.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,15 +18,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <xpc/xpc.h>
 
-#import "NSObject+XPCParse.h"
+@interface XPCUUID : NSObject
 
-#import "NSDictionary+XPCParse.h"
-#import "NSArray+XPCParse.h"
+@property (nonatomic, readonly) CFUUIDRef uuidRef;
+@property (nonatomic, readonly) NSString *string;
 
-#import "NSNumber+XPCParse.h"
-#import "NSData+XPCParse.h"
-#import "NSString+XPCParse.h"
++(XPCUUID *)uuid;
++(XPCUUID *)uuidWithXPCObject:(xpc_object_t)xpc;
 
-#import "XPCUUID.h"
+@end
