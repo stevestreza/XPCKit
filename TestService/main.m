@@ -2,7 +2,7 @@
 //  main.c
 //  TestService
 //
-//  Created by Steve Streza on 7/24/11. Copyright 2011 Mustacheware.
+//  Created by Steve Streza on 7/24/11. Copyright 2011 Steve Streza.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -25,12 +25,13 @@ int main(int argc, const char *argv[])
 {
 	[XPCListener listenForEventsWithHandler:^(NSDictionary *message, XPCConnection *connection) {
 		if([[message objectForKey:@"operation"] isEqual:@"multiply"]){
-			__block double product = 1.0;
 			NSArray *values = [message objectForKey:@"values"];
 
-			[values enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-				product = product * [(NSNumber *)obj doubleValue];
-			}];
+			// calculate the product
+			double product = 1.0;
+			for(NSUInteger index=0; index < values.count; index++){
+				product = product * [(NSNumber *)[values objectAtIndex:index] doubleValue];
+			}
 			
 			[connection sendMessage:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:product] forKey:@"result"]];
 		}

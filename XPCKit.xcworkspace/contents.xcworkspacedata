@@ -4,4 +4,7 @@
    <FileRef
       location = "container:XPCKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
 </Workspace>

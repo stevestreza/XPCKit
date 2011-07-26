@@ -2,7 +2,7 @@
 //  XPCKit.h
 //  XPCKit
 //
-//  Created by Steve Streza on 7/24/11. Copyright 2011 Mustacheware.
+//  Created by Steve Streza on 7/24/11. Copyright 2011 Steve Streza.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
