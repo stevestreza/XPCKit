@@ -10,5 +10,7 @@
 
 #import <xpc/xpc.h>
 #import "XPCExtensions.h"
+#import "XPCTypes.h"
 
 #import "XPCConnection.h"
+#import "XPCListener.h"

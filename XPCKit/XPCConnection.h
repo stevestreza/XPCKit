@@ -7,17 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <xpc/xpc.h>
-
-typedef void (^XPCHandler)(id object);
+#import "XPCTypes.h"
 
 @interface XPCConnection : NSObject{
     xpc_connection_t _connection;
 }
 
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, retain)   XPCHandler eventHandler;
+@property (nonatomic, readonly) NSString  *serviceName;
+@property (nonatomic, retain)   XPCEventHandler eventHandler;
+
+// connection properties
+@property (nonatomic, readonly) NSString *connectionName;
+@property (nonatomic, readonly) NSNumber *connectionEUID;
+@property (nonatomic, readonly) NSNumber *connectionEGID;
+@property (nonatomic, readonly) NSNumber *connectionProcessID;
+@property (nonatomic, readonly) NSString *connectionAuditSessionID;
 
 -(void)sendMessage:(NSDictionary *)message;
 
+// handling connections
+-(void)createConnectionIfNecessary;
+-(void)receiveConnection:(xpc_connection_t)connection;
 @end

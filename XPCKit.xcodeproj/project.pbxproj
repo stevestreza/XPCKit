@@ -45,6 +45,9 @@
 		1EEDD0B513DE6CA700D5AEC3 /* justsome.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B413DE6C5100D5AEC3 /* justsome.json */; };
 		1EEDD0B713DE79D200D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0BA13DE7A1000D5AEC3 /* libXPCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02813DD485400D5AEC3 /* libXPCKit.a */; };
+		1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */; };
+		1EEDD0C313DE7CD900D5AEC3 /* XPCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */; };
+		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +139,9 @@
 		1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XPCParse.m"; sourceTree = "<group>"; };
 		1EEDD0B413DE6C5100D5AEC3 /* justsome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = justsome.json; sourceTree = "<group>"; };
 		1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCListener.h; sourceTree = "<group>"; };
+		1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPCListener.m; sourceTree = "<group>"; };
+		1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,10 +232,14 @@
 			isa = PBXGroup;
 			children = (
 				1EEDD0A013DE642200D5AEC3 /* Extensions */,
-				1EEDD03413DD485400D5AEC3 /* XPCKit.h */,
 				1EEDD03213DD485400D5AEC3 /* Supporting Files */,
+				1EEDD03413DD485400D5AEC3 /* XPCKit.h */,
+				1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */,
+				1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */,
 				1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */,
 				1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */,
+				1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */,
+				1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */,
 			);
 			path = XPCKit;
 			sourceTree = "<group>";
@@ -307,7 +317,6 @@
 		1EEDD0A013DE642200D5AEC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */,
 				1EEDD09713DDC8A300D5AEC3 /* NSObject+XPCParse.h */,
 				1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */,
 				1EEDD08A13DDC34800D5AEC3 /* NSDictionary+XPCParse.h */,
@@ -339,6 +348,8 @@
 				1EEDD0AC13DE669E00D5AEC3 /* NSString+XPCParse.h in Headers */,
 				1EEDD0AF13DE680500D5AEC3 /* XPCExtensions.h in Headers */,
 				1EEDD0B213DE684300D5AEC3 /* NSArray+XPCParse.h in Headers */,
+				1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */,
+				1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +436,7 @@
 		1EEDD01F13DD485400D5AEC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = "Mustacheware";
+				ORGANIZATIONNAME = Mustacheware;
 			};
 			buildConfigurationList = 1EEDD02213DD485400D5AEC3 /* Build configuration list for PBXProject "XPCKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -506,6 +517,7 @@
 				1EEDD0A513DE65F800D5AEC3 /* NSData+XPCParse.m in Sources */,
 				1EEDD0AD13DE669E00D5AEC3 /* NSString+XPCParse.m in Sources */,
 				1EEDD0B313DE684300D5AEC3 /* NSArray+XPCParse.m in Sources */,
+				1EEDD0C313DE7CD900D5AEC3 /* XPCListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +736,10 @@
 				GCC_PREFIX_HEADER = "TestService/TestService-Prefix.pch";
 				INFOPLIST_FILE = "TestService/TestService-Info.plist";
 				MACH_O_TYPE = mh_execute;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "com.mustacheware.$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xpc;
 			};
@@ -736,6 +752,10 @@
 				GCC_PREFIX_HEADER = "TestService/TestService-Prefix.pch";
 				INFOPLIST_FILE = "TestService/TestService-Info.plist";
 				MACH_O_TYPE = mh_execute;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "com.mustacheware.$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xpc;
 			};

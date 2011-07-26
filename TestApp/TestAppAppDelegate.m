@@ -17,7 +17,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    connection = [[XPCConnection alloc] initWithName:@"com.mustacheware.TestService"];
+    connection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
     connection.eventHandler = ^(id object){
         NSLog(@"Received an object! %@",object);
     };
