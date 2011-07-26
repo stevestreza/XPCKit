@@ -16,6 +16,11 @@ Features
  - XPCConnection *(incomplete)*
 - Block-based callbacks
 
+Authors
+=======
+
+- [Steve Streza](https://twitter.com/SteveStreza)
+
 Sample Code
 ===========
 
@@ -52,7 +57,7 @@ Setting up the Server
 License
 =======
 
-Copyright 2011 Steve Streza
+Copyright 2011 XPCKit
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
