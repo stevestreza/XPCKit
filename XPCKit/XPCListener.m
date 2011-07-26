@@ -10,21 +10,27 @@
 #import "XPCExtensions.h"
 
 @interface XPCListener (Private) 
-@property (nonatomic, copy) NSString *serviceName;
 -(id)initWithConnection:(xpc_connection_t)connection;
 @end
+
+static XPCEventHandler sStaticEventHandler = NULL;
 
 static void XPCListener_EventHandler(xpc_connection_t handler);
 static void XPCListener_EventHandler(xpc_connection_t handler){
 	XPCListener *listener = [[XPCListener alloc] initWithConnection:handler];
-	[listener setEventHandler:[[^(NSDictionary *message){
-		[listener sendMessage:(NSDictionary *)[NSString stringWithFormat:@"Hello there! You sent %i items.", [(NSArray *)[message objectForKey:@"contents"] count]]];
-	} copy] autorelease]];
+	[listener setEventHandler:^(NSDictionary *message, XPCConnection *connection){
+		if(sStaticEventHandler){
+			sStaticEventHandler(message, connection);
+		}
+	}];
 }
 
 @implementation XPCListener
 
-+(void)listenForEvents{
++(void)listenForEventsWithHandler:(XPCEventHandler)eventHandler{
+	if(!eventHandler) return;
+	
+	sStaticEventHandler = [eventHandler copy];
 	xpc_main(XPCListener_EventHandler);
 }
 

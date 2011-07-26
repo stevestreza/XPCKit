@@ -13,6 +13,8 @@
     xpc_connection_t _connection;
 }
 
+- (id)initWithServiceName:(NSString *)serviceName;
+
 @property (nonatomic, readonly) NSString  *serviceName;
 @property (nonatomic, retain)   XPCEventHandler eventHandler;
 

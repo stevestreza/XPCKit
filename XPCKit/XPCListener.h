@@ -10,6 +10,6 @@
 
 @interface XPCListener : XPCConnection
 
-+(void)listenForEvents;
++(void)listenForEventsWithHandler:(XPCEventHandler)eventHandler;
 
 @end

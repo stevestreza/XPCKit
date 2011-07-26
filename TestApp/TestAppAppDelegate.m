@@ -18,15 +18,16 @@
 {
     // Insert code here to initialize your application
     connection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
-    connection.eventHandler = ^(id object){
-        NSLog(@"Received an object! %@",object);
+    connection.eventHandler = ^(NSDictionary *object, XPCConnection *inConnection){
+        NSLog(@"Received a response! %@",object);
     };
 	
-	NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"justsome" ofType:@"json"];
-	NSLog(@"JSON path: %@",jsonPath);
+	// Loading a JSON file with a canned dictionary, see TestApp/multiply.json
+	NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"multiply" ofType:@"json"];
 	id data = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonPath]
 											  options:0
 												error:nil];
+
     [connection sendMessage:data];
 }
 

@@ -8,4 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^XPCEventHandler)(NSDictionary *);
+@class XPCConnection;
+typedef void (^XPCEventHandler)(NSDictionary *, XPCConnection *);

@@ -31,12 +31,12 @@
     if(self == (NSNumber *)kCFBooleanTrue){
         return xpc_bool_create(true);
     }else if(self == (NSNumber *)kCFBooleanTrue){
-        return xpc_bool_create(true);
+        return xpc_bool_create(false);
     }else{
         const char* objCType = [self objCType];
-        if(strcmp(objCType, @encode(unsigned long))){
+        if(strcmp(objCType, @encode(unsigned long)) == 0){
             return xpc_uint64_create([self unsignedLongValue]);
-        }else if(strcmp(objCType, @encode(long))){
+        }else if(strcmp(objCType, @encode(long)) == 0){
             return xpc_int64_create([self longValue]);
         }else{
             return xpc_double_create([self doubleValue]);

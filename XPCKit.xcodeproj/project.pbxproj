@@ -42,7 +42,7 @@
 		1EEDD0AF13DE680500D5AEC3 /* XPCExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */; };
 		1EEDD0B213DE684300D5AEC3 /* NSArray+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0B013DE684300D5AEC3 /* NSArray+XPCParse.h */; };
 		1EEDD0B313DE684300D5AEC3 /* NSArray+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */; };
-		1EEDD0B513DE6CA700D5AEC3 /* justsome.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B413DE6C5100D5AEC3 /* justsome.json */; };
+		1EEDD0B513DE6CA700D5AEC3 /* multiply.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B413DE6C5100D5AEC3 /* multiply.json */; };
 		1EEDD0B713DE79D200D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0BA13DE7A1000D5AEC3 /* libXPCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02813DD485400D5AEC3 /* libXPCKit.a */; };
 		1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */; };
@@ -137,7 +137,7 @@
 		1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCExtensions.h; sourceTree = "<group>"; };
 		1EEDD0B013DE684300D5AEC3 /* NSArray+XPCParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XPCParse.h"; sourceTree = "<group>"; };
 		1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XPCParse.m"; sourceTree = "<group>"; };
-		1EEDD0B413DE6C5100D5AEC3 /* justsome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = justsome.json; sourceTree = "<group>"; };
+		1EEDD0B413DE6C5100D5AEC3 /* multiply.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = multiply.json; sourceTree = "<group>"; };
 		1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCListener.h; sourceTree = "<group>"; };
 		1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPCListener.m; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 				1EEDD06213DD48BB00D5AEC3 /* main.m */,
 				1EEDD06413DD48BB00D5AEC3 /* TestApp-Prefix.pch */,
 				1EEDD06513DD48BB00D5AEC3 /* Credits.rtf */,
-				1EEDD0B413DE6C5100D5AEC3 /* justsome.json */,
+				1EEDD0B413DE6C5100D5AEC3 /* multiply.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 				1EEDD06113DD48BB00D5AEC3 /* InfoPlist.strings in Resources */,
 				1EEDD06713DD48BB00D5AEC3 /* Credits.rtf in Resources */,
 				1EEDD06D13DD48BC00D5AEC3 /* MainMenu.xib in Resources */,
-				1EEDD0B513DE6CA700D5AEC3 /* justsome.json in Resources */,
+				1EEDD0B513DE6CA700D5AEC3 /* multiply.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
