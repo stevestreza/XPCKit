@@ -48,6 +48,8 @@
 		1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */; };
 		1EEDD0C313DE7CD900D5AEC3 /* XPCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */; };
 		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; };
+		1EEDD0D013DE9FAB00D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */; };
+		1EEDD0D613DE9FAB00D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,9 @@
 		1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCListener.h; sourceTree = "<group>"; };
 		1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPCListener.m; sourceTree = "<group>"; };
 		1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPCTypes.h; sourceTree = "<group>"; };
+		1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EEDD0D313DE9FAB00D5AEC3 /* XPCKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XPCKit-Info.plist"; sourceTree = "<group>"; };
+		1EEDD0D513DE9FAB00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,13 +186,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EEDD0CB13DE9FAB00D5AEC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEDD0D013DE9FAB00D5AEC3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		1EEDD01D13DD485400D5AEC3 = {
 			isa = PBXGroup;
 			children = (
-				1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */,
 				1EEDD03113DD485400D5AEC3 /* XPCKit */,
 				1EEDD04313DD485400D5AEC3 /* XPCKitTests */,
 				1EEDD05C13DD48BB00D5AEC3 /* TestApp */,
@@ -204,6 +216,7 @@
 				1EEDD03C13DD485400D5AEC3 /* XPCKitTests.octest */,
 				1EEDD05913DD48BB00D5AEC3 /* TestApp.app */,
 				1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */,
+				1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +224,7 @@
 		1EEDD02A13DD485400D5AEC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */,
 				1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */,
 				1EEDD03D13DD485400D5AEC3 /* SenTestingKit.framework */,
 				1EEDD02D13DD485400D5AEC3 /* Other Frameworks */,
@@ -247,6 +261,8 @@
 		1EEDD03213DD485400D5AEC3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1EEDD0D313DE9FAB00D5AEC3 /* XPCKit-Info.plist */,
+				1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */,
 				1EEDD03313DD485400D5AEC3 /* XPCKit-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -353,12 +369,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EEDD0CC13DE9FAB00D5AEC3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1EEDD02713DD485400D5AEC3 /* XPCKit */ = {
+		1EEDD02713DD485400D5AEC3 /* libXPCKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1EEDD04F13DD485400D5AEC3 /* Build configuration list for PBXNativeTarget "XPCKit" */;
+			buildConfigurationList = 1EEDD04F13DD485400D5AEC3 /* Build configuration list for PBXNativeTarget "libXPCKit" */;
 			buildPhases = (
 				1EEDD02413DD485400D5AEC3 /* Sources */,
 				1EEDD02513DD485400D5AEC3 /* Frameworks */,
@@ -368,7 +391,7 @@
 			);
 			dependencies = (
 			);
-			name = XPCKit;
+			name = libXPCKit;
 			productName = XPCKit;
 			productReference = 1EEDD02813DD485400D5AEC3 /* libXPCKit.a */;
 			productType = "com.apple.product-type.library.static";
@@ -430,6 +453,24 @@
 			productReference = 1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */;
 			productType = "com.apple.product-type.bundle";
 		};
+		1EEDD0CE13DE9FAB00D5AEC3 /* XPCKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EEDD0DB13DE9FAB00D5AEC3 /* Build configuration list for PBXNativeTarget "XPCKit" */;
+			buildPhases = (
+				1EEDD0CA13DE9FAB00D5AEC3 /* Sources */,
+				1EEDD0CB13DE9FAB00D5AEC3 /* Frameworks */,
+				1EEDD0CC13DE9FAB00D5AEC3 /* Headers */,
+				1EEDD0CD13DE9FAB00D5AEC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XPCKit;
+			productName = XPCKit;
+			productReference = 1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -450,10 +491,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1EEDD02713DD485400D5AEC3 /* XPCKit */,
+				1EEDD02713DD485400D5AEC3 /* libXPCKit */,
 				1EEDD03B13DD485400D5AEC3 /* XPCKitTests */,
 				1EEDD05813DD48BB00D5AEC3 /* TestApp */,
 				1EEDD07413DD48D800D5AEC3 /* TestService */,
+				1EEDD0CE13DE9FAB00D5AEC3 /* XPCKit */,
 			);
 		};
 /* End PBXProject section */
@@ -484,6 +526,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EEDD07B13DD48D800D5AEC3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEDD0CD13DE9FAB00D5AEC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEDD0D613DE9FAB00D5AEC3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,12 +599,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1EEDD0CA13DE9FAB00D5AEC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		1EEDD04113DD485400D5AEC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EEDD02713DD485400D5AEC3 /* XPCKit */;
+			target = 1EEDD02713DD485400D5AEC3 /* libXPCKit */;
 			targetProxy = 1EEDD04013DD485400D5AEC3 /* PBXContainerItemProxy */;
 		};
 		1EEDD08313DD497400D5AEC3 /* PBXTargetDependency */ = {
@@ -564,12 +621,12 @@
 		};
 		1EEDD09513DDC6A300D5AEC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EEDD02713DD485400D5AEC3 /* XPCKit */;
+			target = 1EEDD02713DD485400D5AEC3 /* libXPCKit */;
 			targetProxy = 1EEDD09413DDC6A300D5AEC3 /* PBXContainerItemProxy */;
 		};
 		1EEDD0B913DE7A0D00D5AEC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1EEDD02713DD485400D5AEC3 /* XPCKit */;
+			target = 1EEDD02713DD485400D5AEC3 /* libXPCKit */;
 			targetProxy = 1EEDD0B813DE7A0D00D5AEC3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -611,6 +668,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				1EEDD07A13DD48D800D5AEC3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EEDD0D513DE9FAB00D5AEC3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -668,7 +733,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XPCKit;
 			};
 			name = Debug;
 		};
@@ -677,7 +742,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = XPCKit;
 			};
 			name = Release;
 		};
@@ -761,6 +826,34 @@
 			};
 			name = Release;
 		};
+		1EEDD0DC13DE9FAB00D5AEC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
+				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1EEDD0DD13DE9FAB00D5AEC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
+				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -773,7 +866,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1EEDD04F13DD485400D5AEC3 /* Build configuration list for PBXNativeTarget "XPCKit" */ = {
+		1EEDD04F13DD485400D5AEC3 /* Build configuration list for PBXNativeTarget "libXPCKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1EEDD05013DD485400D5AEC3 /* Debug */,
@@ -808,6 +901,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1EEDD0DB13DE9FAB00D5AEC3 /* Build configuration list for PBXNativeTarget "XPCKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EEDD0DC13DE9FAB00D5AEC3 /* Debug */,
+				1EEDD0DD13DE9FAB00D5AEC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
