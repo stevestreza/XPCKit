@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EEDD02C13DD485400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */; };
 		1EEDD03E13DD485400D5AEC3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD03D13DD485400D5AEC3 /* SenTestingKit.framework */; };
-		1EEDD03F13DD485400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */; };
 		1EEDD04213DD485400D5AEC3 /* libXPCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02813DD485400D5AEC3 /* libXPCKit.a */; };
 		1EEDD04813DD485400D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD04613DD485400D5AEC3 /* InfoPlist.strings */; };
 		1EEDD04A13DD485400D5AEC3 /* XPCKitTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD04913DD485400D5AEC3 /* XPCKitTests.h */; };
 		1EEDD04C13DD485400D5AEC3 /* XPCKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD04B13DD485400D5AEC3 /* XPCKitTests.m */; };
-		1EEDD05B13DD48BB00D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */; };
 		1EEDD06113DD48BB00D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD05F13DD48BB00D5AEC3 /* InfoPlist.strings */; };
 		1EEDD06313DD48BB00D5AEC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD06213DD48BB00D5AEC3 /* main.m */; };
 		1EEDD06713DD48BB00D5AEC3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD06513DD48BB00D5AEC3 /* Credits.rtf */; };
@@ -48,8 +45,18 @@
 		1EEDD0C213DE7CD900D5AEC3 /* XPCListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C013DE7CD900D5AEC3 /* XPCListener.h */; };
 		1EEDD0C313DE7CD900D5AEC3 /* XPCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */; };
 		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; };
-		1EEDD0D013DE9FAB00D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */; };
 		1EEDD0D613DE9FAB00D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */; };
+		1EEDD0DE13DEA04900D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; };
+		1EEDD0DF13DEA04900D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; };
+		1EEDD0E013DEA04900D5AEC3 /* NSArray+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */; };
+		1EEDD0E113DEA04900D5AEC3 /* NSNumber+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09013DDC48800D5AEC3 /* NSNumber+XPCParse.m */; };
+		1EEDD0E213DEA04900D5AEC3 /* NSData+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0A313DE65F800D5AEC3 /* NSData+XPCParse.m */; };
+		1EEDD0E313DEA04900D5AEC3 /* NSString+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0AB13DE669D00D5AEC3 /* NSString+XPCParse.m */; };
+		1EEDD0E413DEA04900D5AEC3 /* XPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */; };
+		1EEDD0E513DEA04900D5AEC3 /* XPCListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0C113DE7CD900D5AEC3 /* XPCListener.m */; };
+		1EEDD0E913DEA07700D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
+		1EEDD0EA13DEA08E00D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
+		1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,10 +105,6 @@
 
 /* Begin PBXFileReference section */
 		1EEDD02813DD485400D5AEC3 /* libXPCKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXPCKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		1EEDD02E13DD485400D5AEC3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		1EEDD02F13DD485400D5AEC3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1EEDD03013DD485400D5AEC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1EEDD03313DD485400D5AEC3 /* XPCKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XPCKit-Prefix.pch"; sourceTree = "<group>"; };
 		1EEDD03413DD485400D5AEC3 /* XPCKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCKit.h; sourceTree = "<group>"; };
 		1EEDD03C13DD485400D5AEC3 /* XPCKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XPCKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +150,7 @@
 		1EEDD0CF13DE9FAB00D5AEC3 /* XPCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEDD0D313DE9FAB00D5AEC3 /* XPCKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XPCKit-Info.plist"; sourceTree = "<group>"; };
 		1EEDD0D513DE9FAB00D5AEC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EEDD02C13DD485400D5AEC3 /* Cocoa.framework in Frameworks */,
+				1EEDD0E913DEA07700D5AEC3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EEDD03E13DD485400D5AEC3 /* SenTestingKit.framework in Frameworks */,
-				1EEDD03F13DD485400D5AEC3 /* Cocoa.framework in Frameworks */,
 				1EEDD04213DD485400D5AEC3 /* libXPCKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,8 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */,
 				1EEDD09613DDC6A900D5AEC3 /* libXPCKit.a in Frameworks */,
-				1EEDD05B13DD48BB00D5AEC3 /* Cocoa.framework in Frameworks */,
+				1EEDD0EA13DEA08E00D5AEC3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +194,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EEDD0D013DE9FAB00D5AEC3 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,22 +227,11 @@
 		1EEDD02A13DD485400D5AEC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */,
 				1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */,
-				1EEDD02B13DD485400D5AEC3 /* Cocoa.framework */,
 				1EEDD03D13DD485400D5AEC3 /* SenTestingKit.framework */,
-				1EEDD02D13DD485400D5AEC3 /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1EEDD02D13DD485400D5AEC3 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1EEDD02E13DD485400D5AEC3 /* AppKit.framework */,
-				1EEDD02F13DD485400D5AEC3 /* CoreData.framework */,
-				1EEDD03013DD485400D5AEC3 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		1EEDD03113DD485400D5AEC3 /* XPCKit */ = {
@@ -491,11 +483,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				1EEDD0CE13DE9FAB00D5AEC3 /* XPCKit */,
 				1EEDD02713DD485400D5AEC3 /* libXPCKit */,
-				1EEDD03B13DD485400D5AEC3 /* XPCKitTests */,
 				1EEDD05813DD48BB00D5AEC3 /* TestApp */,
 				1EEDD07413DD48D800D5AEC3 /* TestService */,
-				1EEDD0CE13DE9FAB00D5AEC3 /* XPCKit */,
+				1EEDD03B13DD485400D5AEC3 /* XPCKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -603,6 +595,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EEDD0DE13DEA04900D5AEC3 /* NSObject+XPCParse.m in Sources */,
+				1EEDD0DF13DEA04900D5AEC3 /* NSDictionary+XPCParse.m in Sources */,
+				1EEDD0E013DEA04900D5AEC3 /* NSArray+XPCParse.m in Sources */,
+				1EEDD0E113DEA04900D5AEC3 /* NSNumber+XPCParse.m in Sources */,
+				1EEDD0E213DEA04900D5AEC3 /* NSData+XPCParse.m in Sources */,
+				1EEDD0E313DEA04900D5AEC3 /* NSString+XPCParse.m in Sources */,
+				1EEDD0E413DEA04900D5AEC3 /* XPCConnection.m in Sources */,
+				1EEDD0E513DEA04900D5AEC3 /* XPCListener.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
