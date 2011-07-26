@@ -18,8 +18,9 @@
 {
     // Insert code here to initialize your application
     connection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
-    connection.eventHandler = ^(NSDictionary *object, XPCConnection *inConnection){
-        NSLog(@"Received a response! %@",object);
+    connection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
+		NSNumber *result = [message objectForKey:@"result"];
+        NSLog(@"We got a calculation result! %@", result);
     };
 	
 	// Loading a JSON file with a canned dictionary, see TestApp/multiply.json

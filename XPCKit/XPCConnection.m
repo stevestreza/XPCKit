@@ -72,9 +72,9 @@
 
 	xpc_object_t message = NULL;
 
-	NSDate *date = [NSDate date];
+//	NSDate *date = [NSDate date];
 	message = [dictMessage newXPCObject];
-	NSLog(@"Message encoding took %gs on average - %@", [[NSDate date] timeIntervalSinceDate:date], dictMessage);
+//	NSLog(@"Message encoding took %gs on average - %@", [[NSDate date] timeIntervalSinceDate:date], dictMessage);
     
 	xpc_connection_send_message(_connection, message);
     xpc_release(message);
