@@ -1,20 +1,29 @@
 XPCKit is a Cocoa library for wrapping the XPC C APIs in a handy object-oriented model. It is merely meant as an object-oriented wrapper for the C library, and does not attempt to layer any additional semantics on top.
 
+*XPCKit is still in development and should not be considered production-ready just yet. See the Wish List below.*
+
 Features
 ========
 
 - Simplified Objective-C API for interacting with XPC processes
 - Auto-boxing and auto-unboxing of objects from xpc_object_t objects to:
- - NSArray *(complete)*
- - NSDictionary *(complete)*
- - NSData *(complete)*
- - NSData, backed by shared memory *(incomplete)*
- - NSString *(complete)*
- - NSNumber *(complete)*
- - UUIDs *(incomplete)*
- - NSFileHandle *(incomplete)*
- - XPCConnection *(incomplete)*
+ - NSArray
+ - NSDictionary
+ - NSData
+ - NSString
+ - NSNumber for bool, UInt64, Int64, and double types
+ - UUIDs (via a custom XPCUUID class)
 - Block-based callbacks
+
+Wish List
+=========
+
+- Thread safety through a dispatch queue
+- Auto-boxing and auto-unboxing for
+ - NSData, backed by shared memory
+ - NSFileHandle
+ - XPCConnection
+- Better design pattern for XPC services
 
 Authors
 =======
