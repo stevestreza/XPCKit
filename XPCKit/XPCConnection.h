@@ -29,7 +29,7 @@
 - (id)initWithServiceName:(NSString *)serviceName;
 - (id)initWithConnection: (xpc_connection_t)connection;
 
-@property (nonatomic, retain)   XPCEventHandler eventHandler;
+@property (nonatomic, copy)   XPCEventHandler eventHandler;
 
 @property (nonatomic, readonly)   xpc_connection_t connection;
 @property (nonatomic, assign)     dispatch_queue_t dispatchQueue;

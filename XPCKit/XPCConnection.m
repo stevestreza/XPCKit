@@ -45,7 +45,7 @@
 		_connection = xpc_retain(connection);
 		[self receiveConnection:_connection];
 
-		dispatch_queue_t queue = dispatch_queue_create(NULL, 0);
+		dispatch_queue_t queue = dispatch_queue_create(xpc_connection_get_name(_connection), 0);
 		self.dispatchQueue = queue;
 		dispatch_release(queue);
 		
