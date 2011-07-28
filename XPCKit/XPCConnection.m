@@ -26,7 +26,7 @@
 
 @implementation XPCConnection
 
-@synthesize eventHandler=_eventHandler;
+@synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, connection=_connection;
 
 - (id)initWithServiceName:(NSString *)serviceName{
 	xpc_connection_t connection = xpc_connection_create([serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL);
@@ -44,6 +44,12 @@
 	if(self = [super init]){
 		_connection = xpc_retain(connection);
 		[self receiveConnection:_connection];
+
+		dispatch_queue_t queue = dispatch_queue_create(NULL, 0);
+		self.dispatchQueue = queue;
+		dispatch_release(queue);
+		
+		[self resume];
 	}
 	return self;
 }
@@ -56,6 +62,19 @@
 	}
 	
 	[super dealloc];
+}
+
+-(void)setDispatchQueue:(dispatch_queue_t)dispatchQueue{
+	if(dispatchQueue){
+		dispatch_retain(dispatchQueue);
+	}
+	
+	if(_dispatchQueue){
+		dispatch_release(_dispatchQueue);
+	}
+	_dispatchQueue = dispatchQueue;
+	
+	xpc_connection_set_target_queue(self.connection, self.dispatchQueue);
 }
 
 -(void)receiveConnection:(xpc_connection_t)connection{
@@ -80,57 +99,78 @@
             }
         }
     });
-    
-    xpc_connection_resume(_connection);
 }
 
--(void)sendMessage:(NSDictionary *)dictMessage{
-	if(![dictMessage isKindOfClass:[NSDictionary class]]){
-		dictMessage = [NSDictionary dictionaryWithObject:dictMessage forKey:@"contents"];
-	}
+-(void)sendMessage:(NSDictionary *)aDictMessage{
+	dispatch_async(self.dispatchQueue, ^{
+		NSDictionary *dictMessage = aDictMessage;
+		if(![dictMessage isKindOfClass:[NSDictionary class]]){
+			dictMessage = [NSDictionary dictionaryWithObject:dictMessage forKey:@"contents"];
+		}
 
-	xpc_object_t message = NULL;
+		xpc_object_t message = NULL;
 
-//	NSDate *date = [NSDate date];
-	message = [dictMessage newXPCObject];
-//	NSLog(@"Message encoding took %gs on average - %@", [[NSDate date] timeIntervalSinceDate:date], dictMessage);
+//		NSDate *date = [NSDate date];
+		message = [dictMessage newXPCObject];
+//		NSLog(@"Message encoding took %gs on average - %@", [[NSDate date] timeIntervalSinceDate:date], dictMessage);
     
-	xpc_connection_send_message(_connection, message);
-    xpc_release(message);
+		xpc_connection_send_message(_connection, message);
+		xpc_release(message);
+	});
 }
 
 -(NSString *)connectionName{
-	const char* name = xpc_connection_get_name(_connection);
+	__block char* name = NULL; 
+	dispatch_sync(self.dispatchQueue, ^{
+		name = (char*)xpc_connection_get_name(_connection);
+	});
 	if(!name) return nil;
 	return [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
 }
 
 -(NSNumber *)connectionEUID{
-	uid_t uid = xpc_connection_get_euid(_connection);
+	__block uid_t uid = 0;
+	dispatch_sync(self.dispatchQueue, ^{
+		uid = xpc_connection_get_euid(_connection);
+	});
 	return [NSNumber numberWithUnsignedInt:uid];
 }
 
 -(NSNumber *)connectionEGID{
-	gid_t egid = xpc_connection_get_egid(_connection);
+	__block gid_t egid = 0;
+	dispatch_sync(self.dispatchQueue, ^{
+		egid = xpc_connection_get_egid(_connection);
+	});
 	return [NSNumber numberWithUnsignedInt:egid];
 }
 
 -(NSNumber *)connectionProcessID{
-	pid_t pid = xpc_connection_get_pid(_connection);
+	__block pid_t pid = 0;
+	dispatch_sync(self.dispatchQueue, ^{
+		pid = xpc_connection_get_pid(_connection);
+	});
 	return [NSNumber numberWithUnsignedInt:pid];
 }
 
 -(NSNumber *)connectionAuditSessionID{
-	au_asid_t auasid = xpc_connection_get_asid(_connection);
+	
+	__block au_asid_t auasid = 0;
+	dispatch_sync(self.dispatchQueue, ^{
+		auasid = xpc_connection_get_asid(_connection);
+	});
 	return [NSNumber numberWithUnsignedInt:auasid];
 }
 
 -(void)suspend{
-	xpc_connection_suspend(_connection);
+	dispatch_async(self.dispatchQueue, ^{
+		xpc_connection_suspend(_connection);
+	});
 }
 
 -(void)resume{
-	xpc_connection_resume(_connection);
+	dispatch_async(self.dispatchQueue, ^{
+		xpc_connection_resume(_connection);
+	});
 }
 
 -(void)_sendLog:(NSString *)string{

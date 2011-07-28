@@ -18,16 +18,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <dispatch/dispatch.h>
 #import "XPCTypes.h"
 
 @interface XPCConnection : NSObject{
     xpc_connection_t _connection;
+	dispatch_queue_t _dispatchQueue;
 }
 
 - (id)initWithServiceName:(NSString *)serviceName;
 - (id)initWithConnection: (xpc_connection_t)connection;
 
 @property (nonatomic, retain)   XPCEventHandler eventHandler;
+
+@property (nonatomic, readonly)   xpc_connection_t connection;
+@property (nonatomic, assign)     dispatch_queue_t dispatchQueue;
 
 // connection properties
 @property (nonatomic, readonly) NSString *connectionName;
