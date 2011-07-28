@@ -34,12 +34,16 @@
         NSLog(@"We got a calculation result! %@", result);
     };
 	
-	// Loading a JSON file with a canned dictionary, see TestApp/multiply.json
-	NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"multiply" ofType:@"json"];
-	id data = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonPath]
-											  options:0
-												error:nil];
-
+	NSDictionary *data = 
+	[NSDictionary dictionaryWithObjectsAndKeys: 
+	 @"multiply", @"operation",
+	 [NSArray arrayWithObjects:
+	  [NSNumber numberWithInt:7],
+	  [NSNumber numberWithInt:6],
+	  [NSNumber numberWithDouble: 1.67], 
+	  nil], @"values",
+	 nil];
+	
     [connection sendMessage:data];
 }
 
