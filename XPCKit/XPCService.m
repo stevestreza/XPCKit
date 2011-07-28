@@ -37,7 +37,7 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
     return self;
 }
 
--(void)run{
++(void)runService{
 	xpc_main(XPCServiceConnectionHandler);
 }
 
@@ -58,7 +58,7 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
 +(void)runServiceWithConnectionHandler:(XPCConnectionHandler)connectionHandler{
 	XPCService *service = [[XPCService alloc] initWithConnectionHandler:connectionHandler];
 	
-	[service run];
+	[XPCService runService];
 	
 	[service release];
 }

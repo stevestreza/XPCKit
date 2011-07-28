@@ -23,7 +23,8 @@
 
 int main(int argc, const char *argv[])
 {
-	[XPCService runServiceWithConnectionHandler:^(XPCConnection *connection) {
+	[XPCService runServiceWithConnectionHandler:^(XPCConnection *connection){
+//		[connection _sendLog:@"Multiply received a connection"];
 		[connection setEventHandler:^(NSDictionary *message, XPCConnection *connection){
 //			[connection _sendLog:[NSString stringWithFormat:@"Multiply received a message! %@", message]];
 			if([[message objectForKey:@"operation"] isEqual:@"multiply"]){
@@ -39,5 +40,8 @@ int main(int argc, const char *argv[])
 			}
 		}];
 	}];
+	
+	
+	
 	return 0;
 }

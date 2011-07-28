@@ -20,7 +20,7 @@
 
 -(void)handleConnection:(XPCConnection *)connection;
 
--(void)run;
++(void)runService;
 
 @end
 
