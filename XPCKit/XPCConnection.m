@@ -125,6 +125,14 @@
 	return [NSNumber numberWithUnsignedInt:auasid];
 }
 
+-(void)suspend{
+	xpc_connection_suspend(_connection);
+}
+
+-(void)resume{
+	xpc_connection_resume(_connection);
+}
+
 -(void)_sendLog:(NSString *)string{
 #if XPCSendLogMessages
 	[self sendMessage:[NSDictionary dictionaryWithObject:string forKey:@"XPCDebugLog"]];

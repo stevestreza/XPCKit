@@ -38,6 +38,9 @@
 
 -(void)sendMessage:(NSDictionary *)message;
 
+-(void)suspend;
+-(void)resume;
+
 // handling connections
 -(void)receiveConnection:(xpc_connection_t)connection;
 @end
