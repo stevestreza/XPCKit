@@ -14,16 +14,15 @@ Features
  - NSNumber for bool, UInt64, Int64, and double types
  - UUIDs (via a custom XPCUUID class)
 - Block-based callbacks
+- Probably safe to use from multiple threads
 
 Wish List
 =========
 
-- Thread safety through a dispatch queue
 - Auto-boxing and auto-unboxing for
  - NSData, backed by shared memory
  - NSFileHandle
  - XPCConnection
-- Better design pattern for XPC services
 
 Authors
 =======
