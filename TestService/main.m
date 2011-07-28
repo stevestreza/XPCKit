@@ -23,18 +23,21 @@
 
 int main(int argc, const char *argv[])
 {
-	[XPCListener listenForEventsWithHandler:^(NSDictionary *message, XPCConnection *connection) {
-		if([[message objectForKey:@"operation"] isEqual:@"multiply"]){
-			NSArray *values = [message objectForKey:@"values"];
+	[XPCService runServiceWithConnectionHandler:^(XPCConnection *connection) {
+		[connection setEventHandler:^(NSDictionary *message, XPCConnection *connection){
+//			[connection _sendLog:[NSString stringWithFormat:@"Multiply received a message! %@", message]];
+			if([[message objectForKey:@"operation"] isEqual:@"multiply"]){
+				NSArray *values = [message objectForKey:@"values"];
 
-			// calculate the product
-			double product = 1.0;
-			for(NSUInteger index=0; index < values.count; index++){
-				product = product * [(NSNumber *)[values objectAtIndex:index] doubleValue];
-			}
+				// calculate the product
+				double product = 1.0;
+				for(NSUInteger index=0; index < values.count; index++){
+					product = product * [(NSNumber *)[values objectAtIndex:index] doubleValue];
+				}
 			
-			[connection sendMessage:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:product] forKey:@"result"]];
-		}
+				[connection sendMessage:[NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:product] forKey:@"result"]];
+			}
+		}];
 	}];
 	return 0;
 }

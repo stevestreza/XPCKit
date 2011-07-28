@@ -25,8 +25,8 @@
 }
 
 - (id)initWithServiceName:(NSString *)serviceName;
+- (id)initWithConnection: (xpc_connection_t)connection;
 
-@property (nonatomic, readonly) NSString  *serviceName;
 @property (nonatomic, retain)   XPCEventHandler eventHandler;
 
 // connection properties
@@ -39,6 +39,5 @@
 -(void)sendMessage:(NSDictionary *)message;
 
 // handling connections
--(void)createConnectionIfNecessary;
 -(void)receiveConnection:(xpc_connection_t)connection;
 @end

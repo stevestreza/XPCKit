@@ -19,5 +19,12 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark Block-based callbacks
+
 @class XPCConnection;
 typedef void (^XPCEventHandler)(NSDictionary *, XPCConnection *);
+typedef void (^XPCConnectionHandler)(XPCConnection *);
+
+#pragma mark Notifications
+
+#define XPCConnectionReceivedNotification @"XPCConnectionReceivedNotification"
