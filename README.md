@@ -1,6 +1,4 @@
-XPCKit is a Cocoa library for wrapping the XPC C APIs in a handy object-oriented model. It is merely meant as an object-oriented wrapper for the C library, and does not attempt to layer any additional semantics on top.
-
-*XPCKit is still in development and should not be considered production-ready just yet. See the Wish List below.*
+XPCKit is a Cocoa library for wrapping the XPC C APIs in a handy object-oriented model. It is merely meant as an object-oriented wrapper for the C library, and does not attempt to layer any additional semantics on top. It contains code to run both "clients" (which create connections to services) and "services" (which receive connections), although you can mix and match to write raw C code or Objective-C code between different clients and services.
 
 Features
 ========
@@ -21,8 +19,13 @@ Wish List
 =========
 
 - Auto-boxing and auto-unboxing for
- - NSData, backed by shared memory
+ - NSData, backed by shared memory (some code for this exists but it is not reliable, causes crashes, doesn't return consistent data, etc.)
  - XPCConnection
+- Compatibility mode for iOS/Snow Leopard
+ - Both client and service code lives within the app
+ - A mapping of service names to their classes would be added by the developer to the app's Info.plist
+ - Objects would be passed through XPCConnection to an XPCService that is contained within the same process
+ - No xpc_* types would be available
 
 Authors
 =======
@@ -35,12 +38,12 @@ Sample Code
 Given [this sample data](https://github.com/amazingsyco/XPCKit/blob/master/TestApp/multiply.json), converted to an NSDictionary, you can see how:
 
 - the [client](https://github.com/amazingsyco/XPCKit/blob/master/TestApp/TestAppAppDelegate.m) sends this command as a message, and
-- the [server](https://github.com/amazingsyco/XPCKit/blob/master/TestService/main.m) receives this command, processes it, and sends the response back
+- the [service](https://github.com/amazingsyco/XPCKit/blob/master/TestService/main.m) receives this command, processes it, and sends the response back
 
 Installation
 ============
 
-You can use XPCKit in the client, server, or both; you just have to include the code. You can include XPCKit in one of three ways:
+You can use XPCKit in the client, service, or both; you just have to include the code. You can include XPCKit in one of three ways:
 
 1. Include the source files yourself (everything in XPCKit)
 2. Make a dependency of XPCKit's framework
@@ -53,8 +56,8 @@ Setting up the Client
 2. Set up an XPCConnection object with the name of your service
 3. Send it a message
 
-Setting up the Server
----------------------
+Setting up the Service
+----------------------
 
 0. If you haven't already, create a new "XPC Service" target (located in Mac OS X > Framework & Library)
 1. Add the XPCKit source files, library or framework
