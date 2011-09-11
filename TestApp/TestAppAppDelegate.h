@@ -18,7 +18,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "XPCConnection.h"
+#import <XPCKit/XPCKit.h>
 
 @interface TestAppAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
