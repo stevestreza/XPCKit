@@ -12,6 +12,7 @@ Features
  - NSData
  - NSString
  - NSNumber for bool, UInt64, Int64, and double types
+ - NSFileHandle
  - UUIDs (via a custom XPCUUID class)
 - Block-based callbacks
 - Probably safe to use from multiple threads
@@ -21,7 +22,6 @@ Wish List
 
 - Auto-boxing and auto-unboxing for
  - NSData, backed by shared memory
- - NSFileHandle
  - XPCConnection
 
 Authors
