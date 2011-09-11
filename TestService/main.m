@@ -41,13 +41,13 @@ int main(int argc, const char *argv[])
 			
 			if([[message objectForKey:@"operation"] isEqual:@"read"]){
 				NSString *path = [message objectForKey:@"path"];
-//				NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
+				NSData *data = [[NSFileManager defaultManager] contentsAtPath:path];
 				NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
 				
 //				[connection _sendLog:[NSString stringWithFormat:@"data %i bytes handle %@",data.length, fileHandle]];
 				
 				[connection sendMessage:[NSDictionary dictionaryWithObjectsAndKeys:
-//										 data, @"data",
+										 data, @"data",
 										 fileHandle, @"fileHandle",
 										 nil]];
 			}
