@@ -60,7 +60,8 @@ Setting up the Server
 1. Add the XPCKit source files, library or framework
 2. Link against the Foundation framework
 3. Rename "main.c" to "main.m"
-4. In your main function, call +[XPCListener listenForEventsWithHandler:] to start listening for messages.
+4. In your main function, call +[XPCService runServiceWithConnectionHandler:] to start listening for incoming connections.
+5. In the connection handler, set an event handler on the XPCConnection to receive messages.
 
 License
 =======
