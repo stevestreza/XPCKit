@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E5F84A813E10DB700234F31 /* XPCService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F84A613E10DB700234F31 /* XPCService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E5F84A913E10DB700234F31 /* XPCService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F84A613E10DB700234F31 /* XPCService.h */; };
+		1E5F84A913E10DB700234F31 /* XPCService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E5F84A613E10DB700234F31 /* XPCService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E5F84AA13E10DB700234F31 /* XPCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F84A713E10DB700234F31 /* XPCService.m */; };
 		1E5F84AB13E10DB700234F31 /* XPCService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5F84A713E10DB700234F31 /* XPCService.m */; };
 		1E835CB113DF748000338391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
@@ -27,28 +27,28 @@
 		1EEDD07B13DD48D800D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD07913DD48D800D5AEC3 /* InfoPlist.strings */; };
 		1EEDD07E13DD48D800D5AEC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD07D13DD48D800D5AEC3 /* main.m */; };
 		1EEDD08513DD498900D5AEC3 /* com.mustacheware.TestService.xpc in Copy Services */ = {isa = PBXBuildFile; fileRef = 1EEDD07513DD48D800D5AEC3 /* com.mustacheware.TestService.xpc */; };
-		1EEDD08813DD508C00D5AEC3 /* XPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */; };
+		1EEDD08813DD508C00D5AEC3 /* XPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD08913DD508C00D5AEC3 /* XPCConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08713DD508C00D5AEC3 /* XPCConnection.m */; };
-		1EEDD08C13DDC34800D5AEC3 /* NSDictionary+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08A13DDC34800D5AEC3 /* NSDictionary+XPCParse.h */; };
+		1EEDD08C13DDC34800D5AEC3 /* NSDictionary+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08A13DDC34800D5AEC3 /* NSDictionary+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD08D13DDC34800D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; };
 		1EEDD08E13DDC34800D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; };
-		1EEDD09113DDC48800D5AEC3 /* NSNumber+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08F13DDC48800D5AEC3 /* NSNumber+XPCParse.h */; };
+		1EEDD09113DDC48800D5AEC3 /* NSNumber+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08F13DDC48800D5AEC3 /* NSNumber+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD09213DDC48800D5AEC3 /* NSNumber+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09013DDC48800D5AEC3 /* NSNumber+XPCParse.m */; };
 		1EEDD09313DDC48800D5AEC3 /* NSNumber+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09013DDC48800D5AEC3 /* NSNumber+XPCParse.m */; };
-		1EEDD09913DDC8A300D5AEC3 /* NSObject+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD09713DDC8A300D5AEC3 /* NSObject+XPCParse.h */; };
+		1EEDD09913DDC8A300D5AEC3 /* NSObject+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD09713DDC8A300D5AEC3 /* NSObject+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD09A13DDC8A300D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; };
 		1EEDD09B13DDC8A300D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; };
-		1EEDD0A413DE65F800D5AEC3 /* NSData+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0A213DE65F800D5AEC3 /* NSData+XPCParse.h */; };
+		1EEDD0A413DE65F800D5AEC3 /* NSData+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0A213DE65F800D5AEC3 /* NSData+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0A513DE65F800D5AEC3 /* NSData+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0A313DE65F800D5AEC3 /* NSData+XPCParse.m */; };
-		1EEDD0AC13DE669E00D5AEC3 /* NSString+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AA13DE669D00D5AEC3 /* NSString+XPCParse.h */; };
+		1EEDD0AC13DE669E00D5AEC3 /* NSString+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AA13DE669D00D5AEC3 /* NSString+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0AD13DE669E00D5AEC3 /* NSString+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0AB13DE669D00D5AEC3 /* NSString+XPCParse.m */; };
-		1EEDD0AF13DE680500D5AEC3 /* XPCExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */; };
-		1EEDD0B213DE684300D5AEC3 /* NSArray+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0B013DE684300D5AEC3 /* NSArray+XPCParse.h */; };
+		1EEDD0AF13DE680500D5AEC3 /* XPCExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EEDD0B213DE684300D5AEC3 /* NSArray+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0B013DE684300D5AEC3 /* NSArray+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0B313DE684300D5AEC3 /* NSArray+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B113DE684300D5AEC3 /* NSArray+XPCParse.m */; };
 		1EEDD0B513DE6CA700D5AEC3 /* multiply.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0B413DE6C5100D5AEC3 /* multiply.json */; };
 		1EEDD0B713DE79D200D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0B613DE79D200D5AEC3 /* Foundation.framework */; };
 		1EEDD0BA13DE7A1000D5AEC3 /* libXPCKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD02813DD485400D5AEC3 /* libXPCKit.a */; };
-		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; };
+		1EEDD0C513DE8D0F00D5AEC3 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0D613DE9FAB00D5AEC3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EEDD0D413DE9FAB00D5AEC3 /* InfoPlist.strings */; };
 		1EEDD0DE13DEA04900D5AEC3 /* NSObject+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD09813DDC8A300D5AEC3 /* NSObject+XPCParse.m */; };
 		1EEDD0DF13DEA04900D5AEC3 /* NSDictionary+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD08B13DDC34800D5AEC3 /* NSDictionary+XPCParse.m */; };
@@ -62,7 +62,7 @@
 		1EEDD0EC13DEA0A400D5AEC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0EB13DEA0A400D5AEC3 /* Cocoa.framework */; };
 		1EEDD0EE13DEB02000D5AEC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EEDD0ED13DEB01F00D5AEC3 /* Foundation.framework */; };
 		1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EEDD0F213DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; };
+		1EEDD0F213DEB97000D5AEC3 /* XPCUUID.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0EF13DEB96F00D5AEC3 /* XPCUUID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EEDD0F313DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
 		1EEDD0F413DEB97000D5AEC3 /* XPCUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDD0F013DEB97000D5AEC3 /* XPCUUID.m */; };
 		1EF4D9D4141C36AA007BEEC0 /* NSObject+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD09713DDC8A300D5AEC3 /* NSObject+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,8 +75,8 @@
 		1EF4D9DB141C36AA007BEEC0 /* XPCTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0C413DE8D0F00D5AEC3 /* XPCTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9DC141C36AA007BEEC0 /* XPCExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD0AE13DE680500D5AEC3 /* XPCExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9DD141C36AA007BEEC0 /* XPCConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEDD08613DD508C00D5AEC3 /* XPCConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EF4D9E1141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; };
-		1EF4D9E2141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; };
+		1EF4D9E1141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EF4D9E2141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4D9DF141C38D0007BEEC0 /* NSFileHandle+XPCParse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1EF4D9E3141C38D0007BEEC0 /* NSFileHandle+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E0141C38D0007BEEC0 /* NSFileHandle+XPCParse.m */; };
 		1EF4D9E4141C38D0007BEEC0 /* NSFileHandle+XPCParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E0141C38D0007BEEC0 /* NSFileHandle+XPCParse.m */; };
 		1EF4D9E7141C3EEE007BEEC0 /* TestService.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 1EF4D9E6141C3EEE007BEEC0 /* TestService.entitlements */; };
@@ -429,8 +429,8 @@
 				1EF4D9DC141C36AA007BEEC0 /* XPCExtensions.h in Headers */,
 				1EF4D9DD141C36AA007BEEC0 /* XPCConnection.h in Headers */,
 				1E5F84A813E10DB700234F31 /* XPCService.h in Headers */,
-				1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */,
 				1EF4D9E1141C38D0007BEEC0 /* NSFileHandle+XPCParse.h in Headers */,
+				1EEDD0F113DEB97000D5AEC3 /* XPCUUID.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
