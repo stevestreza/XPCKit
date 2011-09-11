@@ -28,13 +28,31 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    connection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
-    connection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
+    mathConnection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
+    mathConnection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
 		NSNumber *result = [message objectForKey:@"result"];
-        NSLog(@"We got a calculation result! %@", result);
+		NSData *data = [message objectForKey:@"data"];
+		NSFileHandle *fileHandle = [message objectForKey:@"fileHandle"];
+		if(result){
+			NSLog(@"We got a calculation result! %@", result);
+		}else if(data || fileHandle){
+			NSData *newData = [fileHandle readDataToEndOfFile];
+			NSLog(@"We got a file handle! Read %i bytes - %@", newData.length, fileHandle);
+		}
     };
 	
-	NSDictionary *data = 
+	readConnection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
+    readConnection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
+		NSData *data = [message objectForKey:@"data"];
+		NSFileHandle *fileHandle = [message objectForKey:@"fileHandle"];
+		if(data || fileHandle){
+			NSData *newData = [fileHandle readDataToEndOfFile];
+			NSLog(@"We got a file handle! Read %i bytes - %@", newData.length, fileHandle);
+		}
+    };
+	
+	
+	NSDictionary *multiplyData = 
 	[NSDictionary dictionaryWithObjectsAndKeys: 
 	 @"multiply", @"operation",
 	 [NSArray arrayWithObjects:
@@ -44,7 +62,16 @@
 	  nil], @"values",
 	 nil];
 	
-    [connection sendMessage:data];
+	NSDictionary *readData = [NSDictionary dictionaryWithObjectsAndKeys:
+			@"read", @"operation",
+			@"/Users/syco/Library/Safari/Bookmarks.plist", @"path",
+			nil];
+	NSData *loadedData = [[NSFileManager defaultManager] contentsAtPath:[readData objectForKey:@"path"]];
+	NSFileHandle *loadedHandle = [NSFileHandle  fileHandleForReadingAtPath:[readData objectForKey:@"path"]];
+	NSLog(@"Sandbox is %@ at path %@, got %i bytes and a file handle %@",((loadedData.length == 0 && loadedHandle == nil) ? @"working" : @"NOT working"), [readData objectForKey:@"path"], loadedData.length, loadedHandle);
+
+    [mathConnection sendMessage:multiplyData];
+	[readConnection sendMessage:readData];
 }
 
 @end

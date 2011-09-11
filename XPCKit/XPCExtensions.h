@@ -29,4 +29,6 @@
 #import "NSData+XPCParse.h"
 #import "NSString+XPCParse.h"
 
+#import "NSFileHandle+XPCParse.h"
+
 #import "XPCUUID.h"

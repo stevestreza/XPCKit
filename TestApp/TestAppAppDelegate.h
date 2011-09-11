@@ -22,7 +22,8 @@
 
 @interface TestAppAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
-    XPCConnection *connection;
+    XPCConnection *mathConnection;
+    XPCConnection *readConnection;
 }
 
 @property (assign) IBOutlet NSWindow *window;
