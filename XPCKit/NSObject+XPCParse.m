@@ -30,7 +30,7 @@
         object = [NSDictionary dictionaryWithContentsOfXPCObject:xpcObject];
 	}else if(type == XPC_TYPE_ARRAY){
 		object = [NSArray arrayWithContentsOfXPCObject:xpcObject];
-    }else if(type == XPC_TYPE_DATA){
+    }else if(type == XPC_TYPE_DATA || type == XPC_TYPE_SHMEM){
         object = [NSData dataWithXPCObject:xpcObject];
     }else if(type == XPC_TYPE_STRING){
         object = [NSString stringWithXPCObject:xpcObject];

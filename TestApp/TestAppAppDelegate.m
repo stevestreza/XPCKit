@@ -47,7 +47,10 @@
 		NSFileHandle *fileHandle = [message objectForKey:@"fileHandle"];
 		if(data || fileHandle){
 			NSData *newData = [fileHandle readDataToEndOfFile];
-			NSLog(@"We got a file handle! Read %i bytes - %@", newData.length, fileHandle);
+			if(newData){
+				NSLog(@"We got maybe mapped data! %i bytes - Equal? %@", data.length, ([newData isEqualToData:data] ? @"YES" : @"NO"));
+			}
+				NSLog(@"We got a file handle! Read %i bytes - %@", newData.length, fileHandle);
 		}
     };
 	
