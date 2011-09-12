@@ -1,8 +1,8 @@
 //
-//  XPCExtensions.h
+//  NSDate+XPCParse.h
 //  XPCKit
 //
-//  Created by Steve Streza on 7/25/11. Copyright 2011 XPCKit.
+//  Created by Steve Streza on 9/11/11. Copyright 2011 XPCKit.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,18 +18,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <xpc/xpc.h>
 
-#import "NSObject+XPCParse.h"
+@interface NSDate (NSDate_XPCParse)
 
-#import "NSDictionary+XPCParse.h"
-#import "NSArray+XPCParse.h"
++(NSDate *)dateWithXPCObject:(xpc_object_t)xpc;
+-(xpc_object_t)newXPCObject;
 
-#import "NSNumber+XPCParse.h"
-#import "NSData+XPCParse.h"
-#import "NSString+XPCParse.h"
-#import "NSDate+XPCParse.h"
-
-#import "NSFileHandle+XPCParse.h"
-
-#import "XPCUUID.h"
+@end

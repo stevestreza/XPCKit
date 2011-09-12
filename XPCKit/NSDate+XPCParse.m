@@ -1,8 +1,8 @@
 //
-//  XPCExtensions.h
+//  NSDate+XPCParse.m
 //  XPCKit
 //
-//  Created by Steve Streza on 7/25/11. Copyright 2011 XPCKit.
+//  Created by Steve Streza on 9/11/11. Copyright 2011 XPCKit.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -17,19 +17,20 @@
 //  limitations under the License.
 //
 
-#import <Foundation/Foundation.h>
+#import "NSDate+XPCParse.h"
 #import <xpc/xpc.h>
 
-#import "NSObject+XPCParse.h"
+@implementation NSDate (XPCParse)
 
-#import "NSDictionary+XPCParse.h"
-#import "NSArray+XPCParse.h"
++(NSDate *)dateWithXPCObject:(xpc_object_t)xpc{
+	int64_t nanosecondsInterval = xpc_date_get_value(xpc);
+	NSTimeInterval interval = nanosecondsInterval / 1000000000.;
+	return [NSDate dateWithTimeIntervalSince1970:interval];
+	
+}
 
-#import "NSNumber+XPCParse.h"
-#import "NSData+XPCParse.h"
-#import "NSString+XPCParse.h"
-#import "NSDate+XPCParse.h"
+-(xpc_object_t)newXPCObject{
+	return xpc_date_create((int64_t)([self timeIntervalSince1970] * 1000000000));
+}
 
-#import "NSFileHandle+XPCParse.h"
-
-#import "XPCUUID.h"
+@end

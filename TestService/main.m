@@ -51,6 +51,10 @@ int main(int argc, const char *argv[])
 										 fileHandle, @"fileHandle",
 										 nil]];
 			}
+			
+			if([[message objectForKey:@"operation"] isEqual:@"whatTimeIsIt"]){
+				[connection sendMessage:[NSDictionary dictionaryWithObject:[NSDate date] forKey:@"date"]];
+			}
 		}];
 	}];
 	

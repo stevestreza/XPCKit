@@ -33,11 +33,14 @@
 		NSNumber *result = [message objectForKey:@"result"];
 		NSData *data = [message objectForKey:@"data"];
 		NSFileHandle *fileHandle = [message objectForKey:@"fileHandle"];
+		NSDate *date = [message objectForKey:@"date"];
 		if(result){
 			NSLog(@"We got a calculation result! %@", result);
 		}else if(data || fileHandle){
 			NSData *newData = [fileHandle readDataToEndOfFile];
 			NSLog(@"We got a file handle! Read %i bytes - %@", newData.length, fileHandle);
+		}else if(date){
+			NSLog(@"It is now %@", date);
 		}
     };
 	
@@ -75,6 +78,8 @@
 
     [mathConnection sendMessage:multiplyData];
 	[readConnection sendMessage:readData];
+	
+	[mathConnection sendMessage:[NSDictionary dictionaryWithObject:@"whatTimeIsIt" forKey:@"operation"]];
 }
 
 @end

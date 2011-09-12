@@ -70,6 +70,17 @@
 											   nil]];
 }
 
+-(void)testDates{
+	[self testEqualityOfXPCRoundtripForObject:[NSDate date]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSince1970:20.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSince1970:2000000.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSince1970:2000000000.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSinceNow:10.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSinceNow:-10.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSinceNow:10000.]];
+	[self testEqualityOfXPCRoundtripForObject:[NSDate dateWithTimeIntervalSinceNow:-10000.]];
+}
+
 -(void)testUUID{
 	// UUIDs are unique, so test a few at random
 	STAssertFalse([[XPCUUID uuid] isEqual:[XPCUUID uuid]], @"Two identical UUIDs");
@@ -90,7 +101,13 @@
 	id outObject = [NSObject objectWithXPCObject:xpcObject];
 	STAssertNotNil(outObject, @"XPC-converted object is nil");
 	
-	STAssertEqualObjects(object, outObject, @"Object %@ was not equal to result %@", outObject);
+	if([object isKindOfClass:[NSDate class]]){
+		NSTimeInterval delta = fabsf([object timeIntervalSinceDate:outObject]);
+		BOOL smallEnough = (delta < 0.000001);
+		STAssertTrue(smallEnough, @"Date %@ was not equal to result %@", object, outObject);
+	}else{
+		STAssertEqualObjects(object, outObject, @"Object %@ was not equal to result %@", object, outObject);
+	}
 	
 	xpc_release(xpcObject);
 }

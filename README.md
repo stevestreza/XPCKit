@@ -9,6 +9,7 @@ Features
  - NSDictionary
  - NSData
  - NSString
+ - NSDate
  - NSNumber for bool, UInt64, Int64, and double types
  - NSFileHandle
  - UUIDs (via a custom XPCUUID class)
@@ -20,6 +21,7 @@ Wish List
 
 - Auto-boxing and auto-unboxing for
  - NSData, backed by shared memory (some code for this exists but it is not reliable, causes crashes, doesn't return consistent data, etc.)
+ - IOSurfaceRef
  - XPCConnection
 - Compatibility mode for iOS/Snow Leopard
  - Both client and service code lives within the app

@@ -30,6 +30,8 @@
         object = [NSDictionary dictionaryWithContentsOfXPCObject:xpcObject];
 	}else if(type == XPC_TYPE_ARRAY){
 		object = [NSArray arrayWithContentsOfXPCObject:xpcObject];
+	}else if(type == XPC_TYPE_DATE){
+		object = [NSDate dateWithXPCObject:xpcObject];
     }else if(type == XPC_TYPE_DATA || type == XPC_TYPE_SHMEM){
         object = [NSData dataWithXPCObject:xpcObject];
     }else if(type == XPC_TYPE_STRING){
@@ -38,7 +40,7 @@
 		object = [XPCUUID uuidWithXPCObject:xpcObject];
 	}else if(type == XPC_TYPE_FD){
 		object = [NSFileHandle fileHandleWithXPCObject:xpcObject];
-    }else if(type == XPC_TYPE_BOOL || type == XPC_TYPE_UINT64 || type == XPC_TYPE_INT64 || XPC_TYPE_DOUBLE){
+    }else if(type == XPC_TYPE_BOOL || type == XPC_TYPE_UINT64 || type == XPC_TYPE_INT64 || type == XPC_TYPE_DOUBLE){
         object = [NSNumber numberWithXPCObject:xpcObject];
 	}
     return object;
