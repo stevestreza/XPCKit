@@ -23,6 +23,7 @@
 
 @class XPCConnection;
 typedef void (^XPCEventHandler)(NSDictionary *, XPCConnection *);
+typedef void (^XPCErrorHandler)(xpc_object_t, NSString *, XPCConnection *);
 typedef void (^XPCConnectionHandler)(XPCConnection *);
 
 #pragma mark Notifications

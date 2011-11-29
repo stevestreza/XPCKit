@@ -24,9 +24,15 @@
 
 #define XPCSendLogMessages 1
 
+@interface XPCConnection ()
+- (void)invokeErrorHandlerWithObject:(xpc_object_t)object connection:(XPCConnection *)connection;
+@end
+
+#pragma mark -
+
 @implementation XPCConnection
 
-@synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, connection=_connection;
+@synthesize eventHandler=_eventHandler, errorHandler=_errorHandler, dispatchQueue=_dispatchQueue, connection=_connection;
 
 - (id)initWithServiceName:(NSString *)serviceName{
 	xpc_connection_t connection = xpc_connection_create([serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL);
@@ -37,7 +43,9 @@
 
 -(id)initWithConnection:(xpc_connection_t)connection{
 	if(!connection){
+#if !__has_feature(objc_arc)
 		[self release];
+#endif
 		return nil;
 	}
 	
@@ -60,8 +68,9 @@
 		xpc_release(_connection);
 		_connection = NULL;
 	}
-	
+#if !__has_feature(objc_arc)	
 	[super dealloc];
+#endif
 }
 
 -(void)setDispatchQueue:(dispatch_queue_t)dispatchQueue{
@@ -81,9 +90,11 @@
     __block XPCConnection *this = self;
     xpc_connection_set_event_handler(connection, ^(xpc_object_t object){
         if (object == XPC_ERROR_CONNECTION_INTERRUPTED){
+			if (this.errorHandler) [this invokeErrorHandlerWithObject:object connection:this];
         }else if (object == XPC_ERROR_CONNECTION_INVALID){    
-        }else if (object == XPC_ERROR_KEY_DESCRIPTION){
+			if (this.errorHandler) [this invokeErrorHandlerWithObject:object connection:this];
         }else if (object == XPC_ERROR_TERMINATION_IMMINENT){
+			if (this.errorHandler) [this invokeErrorHandlerWithObject:object connection:this];
         }else{
             id message = [NSObject objectWithXPCObject: object];
 			
@@ -117,6 +128,12 @@
 		xpc_connection_send_message(_connection, message);
 		xpc_release(message);
 	});
+}
+
+- (void)invokeErrorHandlerWithObject:(xpc_object_t)object connection:(XPCConnection *)connection {
+	const char *string = xpc_dictionary_get_string(object, XPC_ERROR_KEY_DESCRIPTION);
+	NSString *description = [NSString stringWithCString:string encoding:NSUTF8StringEncoding];
+	connection.errorHandler(object, description, connection);
 }
 
 -(NSString *)connectionName{

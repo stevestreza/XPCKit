@@ -29,6 +29,20 @@
 {
     // Insert code here to initialize your application
     mathConnection = [[XPCConnection alloc] initWithServiceName:@"com.mustacheware.TestService"];
+	mathConnection.errorHandler = ^(xpc_object_t object, NSString *description, XPCConnection *inConnection) {
+		if (object == XPC_ERROR_CONNECTION_INTERRUPTED) {
+			// test by adding abort() or assert() to TestService's main.m file
+			NSLog(@"XPC_ERROR_CONNECTION_INTERRUPTED: %@", description);
+	 	} else if (object == XPC_ERROR_CONNECTION_INVALID) {
+			// test by using invalid name in initWithServiceName: above
+			NSLog(@"XPC_ERROR_CONNECTION_INVALID: %@", description);
+		} else if (object == XPC_ERROR_TERMINATION_IMMINENT) {
+			// Not really an error, but more like a message that the app/service is terminating AFAIK, not sure how to test it or if it even needs to be handled, but it's here for the sake of completness...
+			NSLog(@"XPC_ERROR_TERMINATION_IMMINENT: %@", description);
+		} else {
+			NSLog(@"ERROR: %@", description);
+		}
+	};	
     mathConnection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
 		NSNumber *result = [message objectForKey:@"result"];
 		NSData *data = [message objectForKey:@"data"];
