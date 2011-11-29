@@ -24,7 +24,11 @@
 @interface XPCService : NSObject
 
 @property (nonatomic, copy) XPCConnectionHandler connectionHandler;
+#if __has_feature(objc_arc)
+@property (nonatomic, strong, readonly) NSArray *connections;
+#else
 @property (nonatomic, readonly) NSArray *connections;
+#endif
 
 +(void)runServiceWithConnectionHandler:(XPCConnectionHandler)connectionHandler;
 -(id)initWithConnectionHandler:(XPCConnectionHandler)connectionHandler;

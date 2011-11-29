@@ -37,7 +37,9 @@
 
 -(id)initWithConnection:(xpc_connection_t)connection{
 	if(!connection){
+#if !__has_feature(objc_arc)
 		[self release];
+#endif
 		return nil;
 	}
 	
@@ -60,8 +62,9 @@
 		xpc_release(_connection);
 		_connection = NULL;
 	}
-	
+#if !__has_feature(objc_arc)	
 	[super dealloc];
+#endif
 }
 
 -(void)setDispatchQueue:(dispatch_queue_t)dispatchQueue{

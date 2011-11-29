@@ -23,7 +23,10 @@
 
 +(NSFileHandle *)fileHandleWithXPCObject:(xpc_object_t)xpc{
 	int fd = xpc_fd_dup(xpc);
-	NSFileHandle *handle = [[[NSFileHandle alloc] initWithFileDescriptor:fd closeOnDealloc:YES] autorelease];
+	NSFileHandle *handle = [[NSFileHandle alloc] initWithFileDescriptor:fd closeOnDealloc:YES];
+#if !__has_feature(objc_arc)
+	[handle autorelease];
+#endif
 	return handle;
 }
 
