@@ -24,6 +24,8 @@
 @interface XPCConnection : NSObject{
     xpc_connection_t _connection;
 	dispatch_queue_t _dispatchQueue;
+    XPCEventHandler _eventHandler;
+    XPCConnectionHandler _connectionHandler;
 }
 
 - (id)initWithMachName:(NSString *)name listener:(BOOL)listen;

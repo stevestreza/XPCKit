@@ -19,7 +19,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XPCUUID : NSObject
+@interface XPCUUID : NSObject {
+    CFUUIDRef _uuidRef;
+}
 
 @property (nonatomic, readonly) CFUUIDRef uuidRef;
 @property (nonatomic, readonly) NSString *string;
