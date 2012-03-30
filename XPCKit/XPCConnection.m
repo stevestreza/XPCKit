@@ -26,7 +26,14 @@
 
 @implementation XPCConnection
 
-@synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, connection=_connection;
+@synthesize eventHandler=_eventHandler, dispatchQueue=_dispatchQueue, connection=_connection, connectionHandler=_connectionHandler;
+
+- (id)initWithMachName:(NSString *)name listener:(BOOL)listen{
+    xpc_connection_t connection = xpc_connection_create_mach_service([name UTF8String], NULL, (listen ? XPC_CONNECTION_MACH_SERVICE_LISTENER : 0));
+    self = [self initWithConnection:connection];
+	xpc_release(connection);
+	return self;
+}
 
 - (id)initWithServiceName:(NSString *)serviceName{
 	xpc_connection_t connection = xpc_connection_create([serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL);
@@ -60,6 +67,10 @@
 		xpc_release(_connection);
 		_connection = NULL;
 	}
+    if(_dispatchQueue){ 
+        dispatch_release(_dispatchQueue);
+        _dispatchQueue = NULL;
+    }
 	
 	[super dealloc];
 }
@@ -80,11 +91,21 @@
 -(void)receiveConnection:(xpc_connection_t)connection{
     __block XPCConnection *this = self;
     xpc_connection_set_event_handler(connection, ^(xpc_object_t object){
-        if (object == XPC_ERROR_CONNECTION_INTERRUPTED){
-        }else if (object == XPC_ERROR_CONNECTION_INVALID){    
-        }else if (object == XPC_ERROR_KEY_DESCRIPTION){
-        }else if (object == XPC_ERROR_TERMINATION_IMMINENT){
-        }else{
+        xpc_type_t type = xpc_get_type(object);
+        if (type == XPC_TYPE_ERROR){
+            // TODO: error handler or pass error to event handler
+            char *errorDescription = xpc_copy_description(object);
+            NSLog(@"XPCConnection - Error: %s", errorDescription);
+            free(errorDescription);
+        }else if(type == XPC_TYPE_CONNECTION){
+            // used by mach listener connections, send to connection handler for accept/denial
+            XPCConnection *connection = [[XPCConnection alloc] initWithConnection:object];
+            if(this.connectionHandler){
+                this.connectionHandler(connection);
+            }
+            [connection release];
+            return;
+        }else if(type == XPC_TYPE_DICTIONARY){
             id message = [NSObject objectWithXPCObject: object];
 			
 #if XPCSendLogMessages
@@ -97,6 +118,10 @@
             if(this.eventHandler){
                 this.eventHandler(message, this);
             }
+        }else{
+            char *description = xpc_copy_description(object);
+            NSLog(@"XPCConnection - unexpected event object: %s", description);
+            free(description);
         }
     });
 }

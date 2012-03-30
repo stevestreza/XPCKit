@@ -28,7 +28,7 @@ static void XPCServiceConnectionHandler(xpc_connection_t handler){
 
 @implementation XPCService
 
-@synthesize connectionHandler, connections=_connections;
+@synthesize connectionHandler=_connectionHandler, connections=_connections;
 
 -(id)initWithConnectionHandler:(XPCConnectionHandler)aConnectionHandler
 {
