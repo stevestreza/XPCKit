@@ -933,6 +933,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
 				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
+				INSTALL_PATH = "@rpath/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -947,6 +948,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XPCKit/XPCKit-Prefix.pch";
 				INFOPLIST_FILE = "XPCKit/XPCKit-Info.plist";
+				INSTALL_PATH = "@rpath/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
