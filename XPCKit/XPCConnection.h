@@ -26,10 +26,12 @@
 	dispatch_queue_t _dispatchQueue;
 }
 
+- (id)initWithMachName:(NSString *)name listener:(BOOL)listen;
 - (id)initWithServiceName:(NSString *)serviceName;
 - (id)initWithConnection: (xpc_connection_t)connection;
 
-@property (nonatomic, copy)   XPCEventHandler eventHandler;
+@property (nonatomic, copy)        XPCEventHandler eventHandler;
+@property (nonatomic, copy)   XPCConnectionHandler connectionHandler;
 
 @property (nonatomic, readonly)   xpc_connection_t connection;
 @property (nonatomic, assign)     dispatch_queue_t dispatchQueue;
