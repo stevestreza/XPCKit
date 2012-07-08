@@ -41,7 +41,7 @@
 -(xpc_object_t)newXPCObject{
     if(self == (NSNumber *)kCFBooleanTrue){
         return xpc_bool_create(true);
-    }else if(self == (NSNumber *)kCFBooleanTrue){
+    }else if(self == (NSNumber *)kCFBooleanFalse){
         return xpc_bool_create(false);
     }else{
         const char* objCType = [self objCType];
